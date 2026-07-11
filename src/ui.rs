@@ -32,6 +32,6 @@ pub fn print_update_info(name: &str, data: &VersionData, new: bool) {
     println!("├─ install_path   {:?}", data.install_path);
     println!("├─ from           {:?}", data.source);
     println!("├─ version        {:?}", data.version);
-    println!("└─ commit         {:?}", data.hash);
+    println!("└─ commit         {:?}", data.commit);
     println!();
 }

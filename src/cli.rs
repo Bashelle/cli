@@ -13,7 +13,7 @@ pub struct VersionFile {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct VersionData {
-    pub hash: String,
+    pub commit: String,
     pub install_path: String,
     pub source: String,
     pub version: String,
@@ -66,7 +66,7 @@ pub fn check_updates() -> Vec<(String, VersionData)>{
         match lockfile.versions.get(&name) {
             Some(lock_version) => {
                 
-                if update_version.hash != lock_version.hash {
+                if update_version.commit != lock_version.commit {
                     ui::print_update_info(&name, &update_version, false);
                     updates_to_install.push((name.clone(), update_version));
                 }
